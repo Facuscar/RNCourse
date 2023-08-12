@@ -18,7 +18,11 @@ export default function App() {
   }
 
   const handleDeleteGoal = (id) => {
-    setCourseGoals((prev) => prev.filter((goal) => goal.key !== id));
+    setCourseGoals((prev) => {
+      return (
+        prev.filter((goal) => goal.key !== id)
+      );
+    });
   };
 
   return (
