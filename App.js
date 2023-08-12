@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList, Button } from 'react-native';
 
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
@@ -7,6 +7,11 @@ import GoalInput from './components/GoalInput';
 export default function App() {
   const [goalText, setGoalText] = useState('');
   const [courseGoals, setCourseGoals] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  }
 
   const addGoalHandler = () => {
     setCourseGoals((prev) => [...prev, { text: goalText, key: Math.random().toString() }]);
@@ -27,10 +32,12 @@ export default function App() {
 
   return (
     <View style={styles.appContainer}>
+      <Button title='Open modal' color="#5e0acc" onPress={openModal} />
       <GoalInput
         addGoalHandler={addGoalHandler}
         handleGoalTextChange={handleGoalTextChange}
         goalText={goalText}
+        isOpen={isModalOpen}
       />
       <View style={styles.goalsContainer}>
         <FlatList data={courseGoals} renderItem={item => {

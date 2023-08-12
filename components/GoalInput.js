@@ -1,16 +1,18 @@
-import { TextInput, View, Button, StyleSheet } from "react-native"
+import { TextInput, View, Button, StyleSheet, Modal } from "react-native"
 
-const GoalInput = ({ handleGoalTextChange, addGoalHandler, goalText }) => {
+const GoalInput = ({ handleGoalTextChange, addGoalHandler, goalText, isOpen }) => {
   return (
-    <View style={styles.inputContainer}>
-    <TextInput 
-      style={styles.textInput}
-      placeholder='Your goals!'
-      onChangeText={handleGoalTextChange}
-      value={goalText}
-    />
-    <Button title='Add goal' onPress={addGoalHandler} />
-  </View>
+    <Modal visible={isOpen} animationType="slide">
+      <View style={styles.inputContainer}>
+        <TextInput 
+          style={styles.textInput}
+          placeholder='Your goals!'
+          onChangeText={handleGoalTextChange}
+          value={goalText}
+        />
+        <Button title='Add goal' onPress={addGoalHandler} />
+      </View>
+    </Modal>
   )
 }
 
