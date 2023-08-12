@@ -17,9 +17,9 @@ export default function App() {
     setGoalText(goal);
   }
 
-  const handleDeleteGoal = () => {
-    console.log('DELETE');
-  }
+  const handleDeleteGoal = (id) => {
+    setCourseGoals((prev) => prev.filter((goal) => goal.key !== id));
+  };
 
   return (
     <View style={styles.appContainer}>
@@ -31,7 +31,7 @@ export default function App() {
       <View style={styles.goalsContainer}>
         <FlatList data={courseGoals} renderItem={item => {
           return (
-            <GoalItem text={item.item.text} handleDelete={handleDeleteGoal} />
+            <GoalItem text={item.item.text} handleDelete={handleDeleteGoal} id={item.item.key} />
         )
         }} />
       </View>
