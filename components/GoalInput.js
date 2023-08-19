@@ -1,6 +1,6 @@
 import { TextInput, View, Button, StyleSheet, Modal } from "react-native"
 
-const GoalInput = ({ handleGoalTextChange, addGoalHandler, goalText, isOpen }) => {
+const GoalInput = ({ handleGoalTextChange, addGoalHandler, goalText, isOpen, closeModal }) => {
   return (
     <Modal visible={isOpen} animationType="slide">
       <View style={styles.inputContainer}>
@@ -15,7 +15,7 @@ const GoalInput = ({ handleGoalTextChange, addGoalHandler, goalText, isOpen }) =
             <Button title='Add goal' onPress={addGoalHandler} />
           </View>
           <View style={styles.button}>
-            <Button title='Cancel' onPress={addGoalHandler} />
+            <Button title='Cancel' onPress={closeModal} />
           </View>
         </View>
       </View>

@@ -13,9 +13,14 @@ export default function App() {
     setIsModalOpen(true);
   }
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  }
+
   const addGoalHandler = () => {
     setCourseGoals((prev) => [...prev, { text: goalText, key: Math.random().toString() }]);
     setGoalText('');
+    closeModal();
   }
 
   const handleGoalTextChange = (goal) => {
@@ -38,6 +43,7 @@ export default function App() {
         handleGoalTextChange={handleGoalTextChange}
         goalText={goalText}
         isOpen={isModalOpen}
+        closeModal={closeModal}
       />
       <View style={styles.goalsContainer}>
         <FlatList data={courseGoals} renderItem={item => {
