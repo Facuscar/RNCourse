@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <View style={styles.appContainer}>
-      <Button title='Open modal' color="#5e0acc" onPress={openModal} />
+      <Button title='Add new goal' color="#5e0acc" onPress={openModal} />
       <GoalInput
         addGoalHandler={addGoalHandler}
         handleGoalTextChange={handleGoalTextChange}
