@@ -13,10 +13,10 @@ const GoalInput = ({ handleGoalTextChange, addGoalHandler, goalText, isOpen, clo
         />
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
-            <Button title='Add goal' onPress={addGoalHandler} />
+            <Button title='Add goal' onPress={addGoalHandler} color="#b180f0"/>
           </View>
           <View style={styles.button}>
-            <Button title='Cancel' onPress={closeModal} />
+            <Button title='Cancel' onPress={closeModal} color="#f31282" />
           </View>
         </View>
       </View>
@@ -38,7 +38,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#cccccc',
     width: '100%',
-    padding: 8,
+    padding: 16,
+    borderColor: "#e4d0ff",
+    backgroundColor: "#e4d0ff",
+    color: "#120438",
+    borderRadius: 6,
   },
   buttonContainer: {
     marginTop: 16,

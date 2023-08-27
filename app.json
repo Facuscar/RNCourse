@@ -1,5 +1,6 @@
 {
   "expo": {
+    "backgroundColor": "#1e085a",
     "name": "RNCourse",
     "slug": "RNCourse",
     "version": "1.0.0",
