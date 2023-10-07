@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, View, FlatList, Button } from 'react-native';
+import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 
 import GoalItem from './components/GoalItem';
@@ -9,6 +10,11 @@ export default function App() {
   const [goalText, setGoalText] = useState('');
   const [courseGoals, setCourseGoals] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useFonts({
+    'open-sans': require('./assets/fonts/OpenSans-Regular.tff'),
+    'open-sans-bold': require('./assets/fonts/OpenSans-Bold.tff'),
+  })
 
   const openModal = () => {
     setIsModalOpen(true);
